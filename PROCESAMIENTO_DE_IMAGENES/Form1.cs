@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PROCESAMIENTO_DE_IMAGENES
 {
-    public partial class Form1 : Form
+    public partial class frmMenu : Form
     {
-        public Form1()
+        public frmMenu()
         {
             InitializeComponent();
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
