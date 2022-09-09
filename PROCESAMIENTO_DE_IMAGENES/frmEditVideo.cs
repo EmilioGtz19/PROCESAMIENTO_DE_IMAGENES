@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PROCESAMIENTO_DE_IMAGENES
 {
-    public partial class frmMenu : Form
+    public partial class frmEditVideo : Form
     {
-        public frmMenu()
+        public frmEditVideo()
         {
             InitializeComponent();
-        }
-
-        private void BtnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

@@ -53,16 +53,43 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmMenu.Designer.cs">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDetector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetector.Designer.cs">
+      <DependentUpon>frmDetector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditImage.Designer.cs">
+      <DependentUpon>frmEditImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditVideo.Designer.cs">
+      <DependentUpon>frmEditVideo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetector.resx">
+      <DependentUpon>frmDetector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditImage.resx">
+      <DependentUpon>frmEditImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditVideo.resx">
+      <DependentUpon>frmEditVideo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -72,6 +99,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -86,6 +114,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="logotipo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="camera.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
