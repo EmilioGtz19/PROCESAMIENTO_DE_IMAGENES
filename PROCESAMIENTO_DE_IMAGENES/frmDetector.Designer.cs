@@ -31,11 +31,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbDevices = new System.Windows.Forms.ComboBox();
             this.btnActivate = new FontAwesome.Sharp.IconButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cameraBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cameraBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,20 +70,17 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Seleccionar cámara:";
             // 
-            // comboBox1
+            // cbDevices
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.ForeColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Camara1",
-            "Camara2",
-            "Camara3"});
-            this.comboBox1.Location = new System.Drawing.Point(175, 82);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(300, 21);
-            this.comboBox1.TabIndex = 12;
+            this.cbDevices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.cbDevices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDevices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbDevices.ForeColor = System.Drawing.Color.White;
+            this.cbDevices.FormattingEnabled = true;
+            this.cbDevices.Location = new System.Drawing.Point(175, 82);
+            this.cbDevices.Name = "cbDevices";
+            this.cbDevices.Size = new System.Drawing.Size(300, 21);
+            this.cbDevices.TabIndex = 12;
             // 
             // btnActivate
             // 
@@ -105,15 +102,16 @@
             this.btnActivate.Text = "Activar";
             this.btnActivate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnActivate.UseVisualStyleBackColor = false;
+            this.btnActivate.Click += new System.EventHandler(this.BtnActivate_Click);
             // 
-            // pictureBox1
+            // cameraBox
             // 
-            this.pictureBox1.Image = global::PROCESAMIENTO_DE_IMAGENES.Properties.Resources.camera;
-            this.pictureBox1.Location = new System.Drawing.Point(146, 148);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(610, 415);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.cameraBox.Image = global::PROCESAMIENTO_DE_IMAGENES.Properties.Resources.camera;
+            this.cameraBox.Location = new System.Drawing.Point(146, 148);
+            this.cameraBox.Name = "cameraBox";
+            this.cameraBox.Size = new System.Drawing.Size(610, 415);
+            this.cameraBox.TabIndex = 14;
+            this.cameraBox.TabStop = false;
             // 
             // frmDetector
             // 
@@ -121,17 +119,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(925, 670);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.cameraBox);
             this.Controls.Add(this.btnActivate);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbDevices);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDetector";
             this.Text = "frmDetector";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmDetector_FormClosed);
+            this.Load += new System.EventHandler(this.FrmDetector_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cameraBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,8 +142,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbDevices;
         private FontAwesome.Sharp.IconButton btnActivate;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox cameraBox;
     }
 }
