@@ -82,6 +82,7 @@
             this.btnUserManual.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUserManual.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUserManual.UseVisualStyleBackColor = true;
+            this.btnUserManual.Click += new System.EventHandler(this.BtnUserManual_Click);
             // 
             // btnCamera
             // 
@@ -146,7 +147,7 @@
             this.btnEditImage.Name = "btnEditImage";
             this.btnEditImage.Size = new System.Drawing.Size(258, 57);
             this.btnEditImage.TabIndex = 8;
-            this.btnEditImage.Text = "Editor de Imágenes";
+            this.btnEditImage.Text = "Editor de Imagenes";
             this.btnEditImage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditImage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditImage.UseVisualStyleBackColor = true;

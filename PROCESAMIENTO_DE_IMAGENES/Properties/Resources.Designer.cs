@@ -73,6 +73,46 @@ namespace PROCESAMIENTO_DE_IMAGENES.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Detector_UM {
+            get {
+                object obj = ResourceManager.GetObject("Detector_UM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditImage_UM {
+            get {
+                object obj = ResourceManager.GetObject("EditImage_UM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditVideo_UM {
+            get {
+                object obj = ResourceManager.GetObject("EditVideo_UM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Filters_UM {
+            get {
+                object obj = ResourceManager.GetObject("Filters_UM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap image {
             get {
                 object obj = ResourceManager.GetObject("image", resourceCulture);
@@ -96,6 +136,16 @@ namespace PROCESAMIENTO_DE_IMAGENES.Properties {
         internal static System.Drawing.Bitmap logotipo {
             get {
                 object obj = ResourceManager.GetObject("logotipo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_UM {
+            get {
+                object obj = ResourceManager.GetObject("menu_UM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

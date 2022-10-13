@@ -56,7 +56,7 @@ namespace PROCESAMIENTO_DE_IMAGENES
             CloseWebcam();
             int i = cbDevices.SelectedIndex;
 
-            if (i > 0)
+            if (i > -1)
             {
                 string nameDevice = myDevices[i].MonikerString;
                 myWebcam = new VideoCaptureDevice(nameDevice);

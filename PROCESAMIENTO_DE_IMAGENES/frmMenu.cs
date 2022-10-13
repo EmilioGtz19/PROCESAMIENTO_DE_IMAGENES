@@ -54,6 +54,11 @@ namespace PROCESAMIENTO_DE_IMAGENES
             openChildForm(new frmDetector());
         }
 
+        private void BtnUserManual_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmUserManual());
+        }
+
         private void PanelLogo_Click(object sender, EventArgs e)
         {
             if (activeForm != null)
