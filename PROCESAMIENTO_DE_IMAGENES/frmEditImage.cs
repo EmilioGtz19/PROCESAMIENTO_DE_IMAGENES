@@ -15,6 +15,11 @@ namespace PROCESAMIENTO_DE_IMAGENES
     {
 
         private Bitmap bmp;
+        private Form activeForm = null;
+
+        private int[] R = new int[256];
+        private int[] G = new int[256];
+        private int[] B = new int[256];
 
         public frmEditImage()
         {
@@ -86,6 +91,43 @@ namespace PROCESAMIENTO_DE_IMAGENES
                 picBox.Image = bmp;
             }
             */
+        }
+
+        private void BtnHistogram_Click(object sender, EventArgs e)
+        {
+
+            if (bmp != null)
+            {
+                Color color;
+
+                for (int x = 0; x < bmp.Width; x++)
+                {
+                    for (int y = 0; y < bmp.Height; y++)
+                    {
+                        color = bmp.GetPixel(x, y);
+
+                        R[color.R]++;
+                        G[color.G]++;
+                        B[color.B]++;
+
+                    }
+                }
+
+                if (activeForm != null)
+                {
+                    activeForm.Close();
+                    activeForm.Dispose();
+                }
+                activeForm = new Histogram(R, G, B)
+                {
+                    TopLevel = false,
+                    FormBorderStyle = FormBorderStyle.None,
+                    Dock = DockStyle.Fill
+                };
+                panelHistogram.Controls.Add(activeForm);
+                activeForm.Show();
+            }
+
         }
     }
 }

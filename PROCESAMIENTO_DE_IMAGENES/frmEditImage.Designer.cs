@@ -37,6 +37,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btnGrayscale = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelHistogram = new System.Windows.Forms.Panel();
+            this.btnHistogram = new FontAwesome.Sharp.IconButton();
             this.btnClean = new FontAwesome.Sharp.IconButton();
             this.btnDownload = new FontAwesome.Sharp.IconButton();
             this.btnUpload = new FontAwesome.Sharp.IconButton();
@@ -66,7 +68,7 @@
             this.groupBox1.Controls.Add(this.btnGrayscale);
             this.groupBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 472);
+            this.groupBox1.Location = new System.Drawing.Point(12, 543);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(453, 186);
             this.groupBox1.TabIndex = 5;
@@ -159,8 +161,36 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(925, 60);
+            this.panel1.Size = new System.Drawing.Size(930, 60);
             this.panel1.TabIndex = 6;
+            // 
+            // panelHistogram
+            // 
+            this.panelHistogram.Location = new System.Drawing.Point(616, 470);
+            this.panelHistogram.Name = "panelHistogram";
+            this.panelHistogram.Size = new System.Drawing.Size(300, 320);
+            this.panelHistogram.TabIndex = 8;
+            // 
+            // btnHistogram
+            // 
+            this.btnHistogram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnHistogram.FlatAppearance.BorderSize = 0;
+            this.btnHistogram.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
+            this.btnHistogram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistogram.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistogram.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.btnHistogram.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(0)))), ((int)(((byte)(221)))));
+            this.btnHistogram.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHistogram.IconSize = 40;
+            this.btnHistogram.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHistogram.Location = new System.Drawing.Point(714, 349);
+            this.btnHistogram.Name = "btnHistogram";
+            this.btnHistogram.Size = new System.Drawing.Size(202, 51);
+            this.btnHistogram.TabIndex = 7;
+            this.btnHistogram.Text = "Generar Histograma";
+            this.btnHistogram.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHistogram.UseVisualStyleBackColor = false;
+            this.btnHistogram.Click += new System.EventHandler(this.BtnHistogram_Click);
             // 
             // btnClean
             // 
@@ -174,9 +204,9 @@
             this.btnClean.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClean.IconSize = 40;
             this.btnClean.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClean.Location = new System.Drawing.Point(720, 305);
+            this.btnClean.Location = new System.Drawing.Point(714, 282);
             this.btnClean.Name = "btnClean";
-            this.btnClean.Size = new System.Drawing.Size(180, 51);
+            this.btnClean.Size = new System.Drawing.Size(202, 51);
             this.btnClean.TabIndex = 4;
             this.btnClean.Text = "Limpiar";
             this.btnClean.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -195,9 +225,9 @@
             this.btnDownload.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDownload.IconSize = 40;
             this.btnDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDownload.Location = new System.Drawing.Point(720, 235);
+            this.btnDownload.Location = new System.Drawing.Point(714, 212);
             this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(180, 51);
+            this.btnDownload.Size = new System.Drawing.Size(202, 51);
             this.btnDownload.TabIndex = 3;
             this.btnDownload.Text = "Guardar Imagen";
             this.btnDownload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -216,9 +246,9 @@
             this.btnUpload.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnUpload.IconSize = 40;
             this.btnUpload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpload.Location = new System.Drawing.Point(720, 166);
+            this.btnUpload.Location = new System.Drawing.Point(714, 143);
             this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(180, 51);
+            this.btnUpload.Size = new System.Drawing.Size(202, 51);
             this.btnUpload.TabIndex = 2;
             this.btnUpload.Text = "Cargar Imagen";
             this.btnUpload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -240,7 +270,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(925, 670);
+            this.ClientSize = new System.Drawing.Size(930, 815);
+            this.Controls.Add(this.panelHistogram);
+            this.Controls.Add(this.btnHistogram);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClean);
@@ -273,5 +305,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button6;
+        private FontAwesome.Sharp.IconButton btnHistogram;
+        private System.Windows.Forms.Panel panelHistogram;
     }
 }

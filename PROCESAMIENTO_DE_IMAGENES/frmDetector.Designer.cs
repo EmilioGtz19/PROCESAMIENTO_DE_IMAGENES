@@ -45,7 +45,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(925, 60);
+            this.panel1.Size = new System.Drawing.Size(930, 60);
             this.panel1.TabIndex = 10;
             // 
             // label1
@@ -64,7 +64,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(17, 82);
+            this.label2.Location = new System.Drawing.Point(154, 106);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(152, 19);
             this.label2.TabIndex = 11;
@@ -77,7 +77,7 @@
             this.cbDevices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbDevices.ForeColor = System.Drawing.Color.White;
             this.cbDevices.FormattingEnabled = true;
-            this.cbDevices.Location = new System.Drawing.Point(175, 82);
+            this.cbDevices.Location = new System.Drawing.Point(312, 106);
             this.cbDevices.Name = "cbDevices";
             this.cbDevices.Size = new System.Drawing.Size(300, 21);
             this.cbDevices.TabIndex = 12;
@@ -95,7 +95,7 @@
             this.btnActivate.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnActivate.IconSize = 25;
             this.btnActivate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActivate.Location = new System.Drawing.Point(492, 75);
+            this.btnActivate.Location = new System.Drawing.Point(686, 99);
             this.btnActivate.Name = "btnActivate";
             this.btnActivate.Size = new System.Drawing.Size(82, 35);
             this.btnActivate.TabIndex = 13;
@@ -107,7 +107,7 @@
             // cameraBox
             // 
             this.cameraBox.Image = global::PROCESAMIENTO_DE_IMAGENES.Properties.Resources.camera;
-            this.cameraBox.Location = new System.Drawing.Point(146, 148);
+            this.cameraBox.Location = new System.Drawing.Point(158, 238);
             this.cameraBox.Name = "cameraBox";
             this.cameraBox.Size = new System.Drawing.Size(610, 415);
             this.cameraBox.TabIndex = 14;
@@ -118,7 +118,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(925, 670);
+            this.ClientSize = new System.Drawing.Size(930, 815);
             this.Controls.Add(this.cameraBox);
             this.Controls.Add(this.btnActivate);
             this.Controls.Add(this.cbDevices);

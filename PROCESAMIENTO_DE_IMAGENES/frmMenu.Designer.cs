@@ -58,7 +58,7 @@
             this.panelLeftMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeftMenu.Location = new System.Drawing.Point(0, 0);
             this.panelLeftMenu.Name = "panelLeftMenu";
-            this.panelLeftMenu.Size = new System.Drawing.Size(258, 670);
+            this.panelLeftMenu.Size = new System.Drawing.Size(258, 815);
             this.panelLeftMenu.TabIndex = 0;
             // 
             // btnUserManual
@@ -166,7 +166,7 @@
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnExit.IconSize = 45;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 613);
+            this.btnExit.Location = new System.Drawing.Point(0, 758);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(258, 57);
             this.btnExit.TabIndex = 7;
@@ -196,7 +196,7 @@
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(258, 0);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(925, 670);
+            this.panelChildForm.Size = new System.Drawing.Size(930, 815);
             this.panelChildForm.TabIndex = 2;
             // 
             // panel1
@@ -207,7 +207,7 @@
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(925, 60);
+            this.panel1.Size = new System.Drawing.Size(930, 60);
             this.panel1.TabIndex = 7;
             // 
             // lblTitle
@@ -225,7 +225,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::PROCESAMIENTO_DE_IMAGENES.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(359, 190);
+            this.pictureBox1.Location = new System.Drawing.Point(362, 262);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(207, 302);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -237,7 +237,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1183, 670);
+            this.ClientSize = new System.Drawing.Size(1188, 815);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelLeftMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

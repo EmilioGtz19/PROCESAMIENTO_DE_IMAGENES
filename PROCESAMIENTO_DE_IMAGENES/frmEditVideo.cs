@@ -16,5 +16,10 @@ namespace PROCESAMIENTO_DE_IMAGENES
         {
             InitializeComponent();
         }
+
+        private void FrmEditVideo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
