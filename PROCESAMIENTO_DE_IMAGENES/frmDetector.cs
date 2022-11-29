@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AForge.Video.DirectShow;
 using AForge.Video;
+using Emgu.CV;
+using Emgu.CV.Structure;
 
 namespace PROCESAMIENTO_DE_IMAGENES
 {
@@ -17,6 +19,9 @@ namespace PROCESAMIENTO_DE_IMAGENES
 
         private FilterInfoCollection myDevices;
         private VideoCaptureDevice myWebcam;
+        static readonly CascadeClassifier cascadeClassifier = new CascadeClassifier("haarcascade_frontalface_alt_tree.xml");
+        Random random = new Random();       
+        Rectangle[] rectangles = null;
 
         public frmDetector()
         {
@@ -61,7 +66,7 @@ namespace PROCESAMIENTO_DE_IMAGENES
                 string nameDevice = myDevices[i].MonikerString;
                 myWebcam = new VideoCaptureDevice(nameDevice);
                 myWebcam.NewFrame += new NewFrameEventHandler(CaptureWebcam);
-                myWebcam.Start();
+                myWebcam.Start();          
             }
             else
             {
@@ -71,13 +76,35 @@ namespace PROCESAMIENTO_DE_IMAGENES
 
         private void CaptureWebcam(object sender, NewFrameEventArgs eventArgs)
         {
+            int i = 1;
             Bitmap image = (Bitmap)eventArgs.Frame.Clone();
-            cameraBox.Image = image;
+            Font arial = new Font("Arial", 20, FontStyle.Regular);
+            Image<Bgr, byte> grayImage = new Image<Bgr, byte>(image);
+            Brush brush = new SolidBrush(Color.FromKnownColor(KnownColor.Black));
+            rectangles = cascadeClassifier.DetectMultiScale(grayImage, 1.2, 1);
+            Pen pen = RandomColor();
+
+            foreach(Rectangle rectangle in rectangles)
+            {
+                using(Graphics graphics = Graphics.FromImage(image))
+                {                                        
+                        graphics.DrawRectangle(pen, rectangle);
+                        graphics.DrawString(i++.ToString(), arial, brush, rectangle);                    
+                }
+            }
+            cameraBox.Image = image;          
         }
 
         private void FrmDetector_FormClosed(object sender, FormClosedEventArgs e)
         {
             CloseWebcam();
         }
+
+        private Pen RandomColor()
+        {
+            Pen pen = new Pen(Color.FromArgb((byte)random.Next(0, 255), (byte)random.Next(0, 255), (byte)random.Next(0, 255)), 1);
+            return pen;
+        }
+
     }
 }
