@@ -82,7 +82,7 @@ namespace PROCESAMIENTO_DE_IMAGENES
             Image<Bgr, byte> grayImage = new Image<Bgr, byte>(image);
             Brush brush = new SolidBrush(Color.FromKnownColor(KnownColor.Black));
             rectangles = cascadeClassifier.DetectMultiScale(grayImage, 1.2, 1);
-            Pen pen = RandomColor();
+            Pen pen = new Pen(Color.Red,7);
 
             foreach(Rectangle rectangle in rectangles)
             {
@@ -100,11 +100,6 @@ namespace PROCESAMIENTO_DE_IMAGENES
             CloseWebcam();
         }
 
-        private Pen RandomColor()
-        {
-            Pen pen = new Pen(Color.FromArgb((byte)random.Next(0, 255), (byte)random.Next(0, 255), (byte)random.Next(0, 255)), 1);
-            return pen;
-        }
-
+    
     }
 }
