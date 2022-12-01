@@ -16,10 +16,12 @@ namespace PROCESAMIENTO_DE_IMAGENES
 
         private Bitmap bmp;
         private Form activeForm = null;
-
         private int[] R = new int[256];
         private int[] G = new int[256];
         private int[] B = new int[256];
+        private int bmpWidth;
+        private int bmpHeight;
+      
 
         public frmEditImage()
         {
@@ -37,6 +39,8 @@ namespace PROCESAMIENTO_DE_IMAGENES
             {
                 picBox.Image = new Bitmap(OpenImage.FileName);
                 bmp = new Bitmap(picBox.Image);
+                bmpWidth = bmp.Width;
+                bmpHeight = bmp.Height;
             }
               
             OpenImage.Dispose();
@@ -86,18 +90,23 @@ namespace PROCESAMIENTO_DE_IMAGENES
 
         private void BtnGrayscale_Click(object sender, EventArgs e)
         {
-            /*
+            
             if(bmp != null)
             {
-                for (int j = 0; j < bmp.Width; j++)
-                    for (int i = 0; i < bmp.Height; i++)
+                Color actualColor, newColor;
+                Bitmap finalColor = new Bitmap(bmpWidth, bmpHeight);
+
+                for (int j = 0; j < bmpWidth; j++)
+                    for (int i = 0; i < bmpHeight; i++)
                     {
-                        bmp.SetPixel(j, i, Color.FromArgb(120, 200, 120));
+                        actualColor = bmp.GetPixel(j, i);
+                        newColor = Color.FromArgb(actualColor.R, actualColor.R, actualColor.R);
+                        finalColor.SetPixel(j, i, newColor);
                     }
 
-                picBox.Image = bmp;
+                picBox.Image = finalColor;
             }
-            */
+            
         }
 
         private void GenerateHistogram()
