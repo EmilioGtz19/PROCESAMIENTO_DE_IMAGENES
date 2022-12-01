@@ -21,7 +21,9 @@ namespace PROCESAMIENTO_DE_IMAGENES
         private int[] B = new int[256];
         private int bmpWidth;
         private int bmpHeight;
-      
+        private Color actualColor;
+        private Color newColor;
+
 
         public frmEditImage()
         {
@@ -93,7 +95,6 @@ namespace PROCESAMIENTO_DE_IMAGENES
             
             if(bmp != null)
             {
-                Color actualColor, newColor;
                 Bitmap finalColor = new Bitmap(bmpWidth, bmpHeight);
 
                 for (int j = 0; j < bmpWidth; j++)
@@ -109,6 +110,82 @@ namespace PROCESAMIENTO_DE_IMAGENES
                 GenerateHistogram();
             }
             
+        }
+
+        private void btnNegative_Click(object sender, EventArgs e)
+        {
+            if (bmp != null)
+            {             
+                Bitmap finalColor = new Bitmap(bmpWidth, bmpHeight);
+
+                for (int j = 0; j < bmpWidth; j++)
+                    for (int i = 0; i < bmpHeight; i++)
+                    {
+                        actualColor = bmp.GetPixel(j, i);
+                        newColor = Color.FromArgb(255 - actualColor.R, 255 - actualColor.G, 255 - actualColor.B);
+                        finalColor.SetPixel(j, i, newColor);
+
+                    }
+
+                picBox.Image = finalColor;
+                bmp = finalColor;
+                GenerateHistogram();
+            }
+        }
+
+        private void BtnSepia_Click(object sender, EventArgs e)
+        {
+            if (bmp != null)
+            {
+                Bitmap finalColor = new Bitmap(bmpWidth, bmpHeight);
+
+                for(int j = 0; j < bmpWidth; j++)
+                    for(int i = 0; i < bmpHeight; i++)
+                    {
+                        actualColor = bmp.GetPixel(j,i);
+
+                        int a = actualColor.A;
+                        int r = actualColor.R;
+                        int g = actualColor.G;
+                        int b = actualColor.B;
+
+                        int tempR = (int)(0.393 * r + 0.769 * g + 0.189 * b);
+                        int tempG = (int)(0.349 * r + 0.686 * g + 0.168 * b);
+                        int tempB = (int)(0.272 * r + 0.534 * g + 0.131 * b);
+
+                        if (tempR > 255)
+                        {
+                            r = 255;
+                        }
+                        else
+                        {
+                            r = tempR;
+                        }
+
+                        if(tempG > 255)
+                        {
+                            g = 255;
+                        }
+                        else
+                        {
+                            g = tempG;
+                        }
+                        if(tempB > 255)
+                        {
+                            b = 255;
+                        }
+                        else
+                        {
+                            b = tempB;
+                        }
+
+                        finalColor.SetPixel(j, i, Color.FromArgb(a, r, g, b));
+                    }
+
+                picBox.Image = finalColor;
+                bmp = finalColor;
+                GenerateHistogram();
+            }
         }
 
         private void GenerateHistogram()
@@ -146,26 +223,5 @@ namespace PROCESAMIENTO_DE_IMAGENES
             }
         }
 
-        private void btnNegative_Click(object sender, EventArgs e)
-        {
-            if(bmp != null)
-            {
-                Color actualColor, newColor;
-                Bitmap finalColor = new Bitmap(bmpWidth, bmpHeight);
-
-                for (int j = 0; j <bmpWidth;j++)
-                    for(int i = 0; i< bmpHeight; i++)
-                    {
-                        actualColor = bmp.GetPixel(j, i);
-                        newColor = Color.FromArgb(255 - actualColor.R, 255 - actualColor.G, 255 - actualColor.B);
-                        finalColor.SetPixel(j, i, newColor);
-
-                    }
-
-                picBox.Image = finalColor;
-                bmp = finalColor;
-                GenerateHistogram();
-            }
-        }
     }
 }
