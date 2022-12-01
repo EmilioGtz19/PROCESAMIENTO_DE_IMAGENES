@@ -105,6 +105,8 @@ namespace PROCESAMIENTO_DE_IMAGENES
                     }
 
                 picBox.Image = finalColor;
+                bmp = finalColor;
+                GenerateHistogram();
             }
             
         }
@@ -115,9 +117,9 @@ namespace PROCESAMIENTO_DE_IMAGENES
             {
                 Color color;
 
-                for (int x = 0; x < bmp.Width; x++)
+                for (int x = 0; x < bmpWidth; x++)
                 {
-                    for (int y = 0; y < bmp.Height; y++)
+                    for (int y = 0; y < bmpHeight; y++)
                     {
                         color = bmp.GetPixel(x, y);
 
@@ -141,6 +143,28 @@ namespace PROCESAMIENTO_DE_IMAGENES
                 };
                 panelHistogram.Controls.Add(activeForm);
                 activeForm.Show();
+            }
+        }
+
+        private void btnNegative_Click(object sender, EventArgs e)
+        {
+            if(bmp != null)
+            {
+                Color actualColor, newColor;
+                Bitmap finalColor = new Bitmap(bmpWidth, bmpHeight);
+
+                for (int j = 0; j <bmpWidth;j++)
+                    for(int i = 0; i< bmpHeight; i++)
+                    {
+                        actualColor = bmp.GetPixel(j, i);
+                        newColor = Color.FromArgb(255 - actualColor.R, 255 - actualColor.G, 255 - actualColor.B);
+                        finalColor.SetPixel(j, i, newColor);
+
+                    }
+
+                picBox.Image = finalColor;
+                bmp = finalColor;
+                GenerateHistogram();
             }
         }
     }

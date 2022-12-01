@@ -33,7 +33,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnNegative = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnGrayscale = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -63,15 +63,15 @@
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btnNegative);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btnGrayscale);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(16, 668);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(604, 229);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
@@ -84,7 +84,7 @@
             this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Location = new System.Drawing.Point(419, 140);
-            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(171, 63);
             this.button6.TabIndex = 5;
@@ -98,7 +98,7 @@
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Location = new System.Drawing.Point(419, 32);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(171, 63);
             this.button5.TabIndex = 4;
@@ -112,26 +112,27 @@
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(215, 140);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(171, 63);
             this.button4.TabIndex = 3;
             this.button4.Text = "Ruido Sal y Pimienta";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnNegative
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(215, 32);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(171, 63);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Negativo";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnNegative.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnNegative.FlatAppearance.BorderSize = 0;
+            this.btnNegative.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
+            this.btnNegative.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNegative.Location = new System.Drawing.Point(215, 32);
+            this.btnNegative.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNegative.Name = "btnNegative";
+            this.btnNegative.Size = new System.Drawing.Size(171, 63);
+            this.btnNegative.TabIndex = 2;
+            this.btnNegative.Text = "Negativo";
+            this.btnNegative.UseVisualStyleBackColor = false;
+            this.btnNegative.Click += new System.EventHandler(this.btnNegative_Click);
             // 
             // button2
             // 
@@ -140,7 +141,7 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(8, 140);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(171, 63);
             this.button2.TabIndex = 1;
@@ -154,7 +155,7 @@
             this.btnGrayscale.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.btnGrayscale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrayscale.Location = new System.Drawing.Point(11, 32);
-            this.btnGrayscale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGrayscale.Margin = new System.Windows.Forms.Padding(4);
             this.btnGrayscale.Name = "btnGrayscale";
             this.btnGrayscale.Size = new System.Drawing.Size(171, 63);
             this.btnGrayscale.TabIndex = 0;
@@ -168,7 +169,7 @@
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1240, 74);
             this.panel1.TabIndex = 6;
@@ -176,7 +177,7 @@
             // panelHistogram
             // 
             this.panelHistogram.Location = new System.Drawing.Point(821, 578);
-            this.panelHistogram.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelHistogram.Margin = new System.Windows.Forms.Padding(4);
             this.panelHistogram.Name = "panelHistogram";
             this.panelHistogram.Size = new System.Drawing.Size(400, 394);
             this.panelHistogram.TabIndex = 8;
@@ -194,7 +195,7 @@
             this.btnClean.IconSize = 40;
             this.btnClean.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClean.Location = new System.Drawing.Point(952, 347);
-            this.btnClean.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClean.Margin = new System.Windows.Forms.Padding(4);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(269, 63);
             this.btnClean.TabIndex = 4;
@@ -216,7 +217,7 @@
             this.btnDownload.IconSize = 40;
             this.btnDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDownload.Location = new System.Drawing.Point(952, 261);
-            this.btnDownload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDownload.Margin = new System.Windows.Forms.Padding(4);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.Size = new System.Drawing.Size(269, 63);
             this.btnDownload.TabIndex = 3;
@@ -238,7 +239,7 @@
             this.btnUpload.IconSize = 40;
             this.btnUpload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpload.Location = new System.Drawing.Point(952, 176);
-            this.btnUpload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpload.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(269, 63);
             this.btnUpload.TabIndex = 2;
@@ -251,7 +252,7 @@
             // 
             this.picBox.BackgroundImage = global::PROCESAMIENTO_DE_IMAGENES.Properties.Resources.image;
             this.picBox.Location = new System.Drawing.Point(16, 97);
-            this.picBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picBox.Margin = new System.Windows.Forms.Padding(4);
             this.picBox.Name = "picBox";
             this.picBox.Size = new System.Drawing.Size(907, 449);
             this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -273,7 +274,7 @@
             this.Controls.Add(this.picBox);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEditImage";
             this.Text = "Editar Imagen";
             this.groupBox1.ResumeLayout(false);
@@ -295,7 +296,7 @@
         private System.Windows.Forms.Button btnGrayscale;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnNegative;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panelHistogram;
