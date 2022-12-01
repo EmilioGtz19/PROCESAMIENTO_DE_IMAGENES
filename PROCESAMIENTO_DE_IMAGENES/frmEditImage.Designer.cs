@@ -38,7 +38,6 @@
             this.btnGrayscale = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelHistogram = new System.Windows.Forms.Panel();
-            this.btnHistogram = new FontAwesome.Sharp.IconButton();
             this.btnClean = new FontAwesome.Sharp.IconButton();
             this.btnDownload = new FontAwesome.Sharp.IconButton();
             this.btnUpload = new FontAwesome.Sharp.IconButton();
@@ -51,10 +50,11 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(12, 9);
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(16, 11);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(244, 44);
+            this.lblTitle.Size = new System.Drawing.Size(313, 54);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Editar Imagen";
             // 
@@ -66,11 +66,13 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btnGrayscale);
-            this.groupBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 543);
+            this.groupBox1.Location = new System.Drawing.Point(16, 668);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(453, 186);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(604, 229);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -81,9 +83,10 @@
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(314, 114);
+            this.button6.Location = new System.Drawing.Point(419, 140);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(128, 51);
+            this.button6.Size = new System.Drawing.Size(171, 63);
             this.button6.TabIndex = 5;
             this.button6.Text = "Pixelado";
             this.button6.UseVisualStyleBackColor = false;
@@ -94,9 +97,10 @@
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(314, 26);
+            this.button5.Location = new System.Drawing.Point(419, 32);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(128, 51);
+            this.button5.Size = new System.Drawing.Size(171, 63);
             this.button5.TabIndex = 4;
             this.button5.Text = "Sepia";
             this.button5.UseVisualStyleBackColor = false;
@@ -107,9 +111,10 @@
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(161, 114);
+            this.button4.Location = new System.Drawing.Point(215, 140);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(128, 51);
+            this.button4.Size = new System.Drawing.Size(171, 63);
             this.button4.TabIndex = 3;
             this.button4.Text = "Ruido Sal y Pimienta";
             this.button4.UseVisualStyleBackColor = false;
@@ -120,9 +125,10 @@
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(161, 26);
+            this.button3.Location = new System.Drawing.Point(215, 32);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(128, 51);
+            this.button3.Size = new System.Drawing.Size(171, 63);
             this.button3.TabIndex = 2;
             this.button3.Text = "Negativo";
             this.button3.UseVisualStyleBackColor = false;
@@ -133,9 +139,10 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(6, 114);
+            this.button2.Location = new System.Drawing.Point(8, 140);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 51);
+            this.button2.Size = new System.Drawing.Size(171, 63);
             this.button2.TabIndex = 1;
             this.button2.Text = "Blur";
             this.button2.UseVisualStyleBackColor = false;
@@ -146,9 +153,10 @@
             this.btnGrayscale.FlatAppearance.BorderSize = 0;
             this.btnGrayscale.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.btnGrayscale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGrayscale.Location = new System.Drawing.Point(8, 26);
+            this.btnGrayscale.Location = new System.Drawing.Point(11, 32);
+            this.btnGrayscale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGrayscale.Name = "btnGrayscale";
-            this.btnGrayscale.Size = new System.Drawing.Size(128, 51);
+            this.btnGrayscale.Size = new System.Drawing.Size(171, 63);
             this.btnGrayscale.TabIndex = 0;
             this.btnGrayscale.Text = "Escala de Grises";
             this.btnGrayscale.UseVisualStyleBackColor = false;
@@ -160,37 +168,18 @@
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(930, 60);
+            this.panel1.Size = new System.Drawing.Size(1240, 74);
             this.panel1.TabIndex = 6;
             // 
             // panelHistogram
             // 
-            this.panelHistogram.Location = new System.Drawing.Point(616, 470);
+            this.panelHistogram.Location = new System.Drawing.Point(821, 578);
+            this.panelHistogram.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelHistogram.Name = "panelHistogram";
-            this.panelHistogram.Size = new System.Drawing.Size(300, 320);
+            this.panelHistogram.Size = new System.Drawing.Size(400, 394);
             this.panelHistogram.TabIndex = 8;
-            // 
-            // btnHistogram
-            // 
-            this.btnHistogram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.btnHistogram.FlatAppearance.BorderSize = 0;
-            this.btnHistogram.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
-            this.btnHistogram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistogram.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistogram.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.btnHistogram.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(0)))), ((int)(((byte)(221)))));
-            this.btnHistogram.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHistogram.IconSize = 40;
-            this.btnHistogram.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHistogram.Location = new System.Drawing.Point(714, 349);
-            this.btnHistogram.Name = "btnHistogram";
-            this.btnHistogram.Size = new System.Drawing.Size(202, 51);
-            this.btnHistogram.TabIndex = 7;
-            this.btnHistogram.Text = "Generar Histograma";
-            this.btnHistogram.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHistogram.UseVisualStyleBackColor = false;
-            this.btnHistogram.Click += new System.EventHandler(this.BtnHistogram_Click);
             // 
             // btnClean
             // 
@@ -198,15 +187,16 @@
             this.btnClean.FlatAppearance.BorderSize = 0;
             this.btnClean.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClean.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClean.IconChar = FontAwesome.Sharp.IconChar.Eraser;
             this.btnClean.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(0)))), ((int)(((byte)(221)))));
             this.btnClean.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClean.IconSize = 40;
             this.btnClean.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClean.Location = new System.Drawing.Point(714, 282);
+            this.btnClean.Location = new System.Drawing.Point(952, 347);
+            this.btnClean.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClean.Name = "btnClean";
-            this.btnClean.Size = new System.Drawing.Size(202, 51);
+            this.btnClean.Size = new System.Drawing.Size(269, 63);
             this.btnClean.TabIndex = 4;
             this.btnClean.Text = "Limpiar";
             this.btnClean.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -219,15 +209,16 @@
             this.btnDownload.FlatAppearance.BorderSize = 0;
             this.btnDownload.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDownload.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownload.IconChar = FontAwesome.Sharp.IconChar.Download;
             this.btnDownload.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(0)))), ((int)(((byte)(221)))));
             this.btnDownload.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDownload.IconSize = 40;
             this.btnDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDownload.Location = new System.Drawing.Point(714, 212);
+            this.btnDownload.Location = new System.Drawing.Point(952, 261);
+            this.btnDownload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(202, 51);
+            this.btnDownload.Size = new System.Drawing.Size(269, 63);
             this.btnDownload.TabIndex = 3;
             this.btnDownload.Text = "Guardar Imagen";
             this.btnDownload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -240,15 +231,16 @@
             this.btnUpload.FlatAppearance.BorderSize = 0;
             this.btnUpload.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpload.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpload.IconChar = FontAwesome.Sharp.IconChar.Upload;
             this.btnUpload.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(0)))), ((int)(((byte)(221)))));
             this.btnUpload.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnUpload.IconSize = 40;
             this.btnUpload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpload.Location = new System.Drawing.Point(714, 143);
+            this.btnUpload.Location = new System.Drawing.Point(952, 176);
+            this.btnUpload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(202, 51);
+            this.btnUpload.Size = new System.Drawing.Size(269, 63);
             this.btnUpload.TabIndex = 2;
             this.btnUpload.Text = "Cargar Imagen";
             this.btnUpload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -258,21 +250,21 @@
             // picBox
             // 
             this.picBox.BackgroundImage = global::PROCESAMIENTO_DE_IMAGENES.Properties.Resources.image;
-            this.picBox.Location = new System.Drawing.Point(12, 79);
+            this.picBox.Location = new System.Drawing.Point(16, 97);
+            this.picBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(680, 365);
+            this.picBox.Size = new System.Drawing.Size(907, 449);
             this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBox.TabIndex = 1;
             this.picBox.TabStop = false;
             // 
             // frmEditImage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(930, 815);
+            this.ClientSize = new System.Drawing.Size(1240, 1003);
             this.Controls.Add(this.panelHistogram);
-            this.Controls.Add(this.btnHistogram);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClean);
@@ -281,6 +273,7 @@
             this.Controls.Add(this.picBox);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmEditImage";
             this.Text = "Editar Imagen";
             this.groupBox1.ResumeLayout(false);
@@ -305,7 +298,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button6;
-        private FontAwesome.Sharp.IconButton btnHistogram;
         private System.Windows.Forms.Panel panelHistogram;
     }
 }

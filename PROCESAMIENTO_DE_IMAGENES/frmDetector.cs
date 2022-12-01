@@ -82,7 +82,7 @@ namespace PROCESAMIENTO_DE_IMAGENES
             Image<Bgr, byte> grayImage = new Image<Bgr, byte>(image);
             Brush brush = new SolidBrush(Color.FromKnownColor(KnownColor.Black));
             rectangles = cascadeClassifier.DetectMultiScale(grayImage, 1.2, 1);
-            Pen pen = new Pen(Color.Red,7);
+            Pen pen = new Pen(Color.Red,4);
 
             foreach(Rectangle rectangle in rectangles)
             {

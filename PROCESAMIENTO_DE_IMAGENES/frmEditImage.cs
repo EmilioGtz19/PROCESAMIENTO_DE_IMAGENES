@@ -40,41 +40,48 @@ namespace PROCESAMIENTO_DE_IMAGENES
             }
               
             OpenImage.Dispose();
+            GenerateHistogram();
 
         }
 
         private void BtnClean_Click(object sender, EventArgs e)
         {
-            /*
-            DialogResult dialogResult = MessageBox.Show("Sure", "Limpiar", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+
+            if (picBox.Image != null)
             {
-                
+                DialogResult dialogResult = MessageBox.Show("¿Estás seguro de borrar tu progreso?", "Limpiar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    picBox.Image.Dispose();
+                    picBox.Image = null;
+                }
             }
-            else if (dialogResult == DialogResult.No)
+            else
             {
-                
+                MessageBox.Show("Ninguna imagen cargada", "Limpiar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            */
+            
         }
 
         private void BtnDownload_Click(object sender, EventArgs e)
         {
-            /*
+            
             if (picBox.Image != null)
             {
-                SaveFileDialog Guardar = new SaveFileDialog();
-                Guardar.Filter = "JPEG(*.JPG)|*.JPG|BMP(*.BMP)|*.BMP";
+                SaveFileDialog save = new SaveFileDialog();
+                save.Filter = "JPEG(*.JPG)|*.JPG|BMP(*.BMP)|*.BMP";
                 Image Imagen = picBox.Image;
-                Guardar.ShowDialog();
-
-                Imagen.Save(Guardar.FileName);
+                
+                if(save.ShowDialog() == DialogResult.OK)
+                {
+                    Imagen.Save(save.FileName);
+                }
             }
             else
             {
                 MessageBox.Show("Ninguna imagen cargada", "Guardar Imagen", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            */
+            
         }
 
         private void BtnGrayscale_Click(object sender, EventArgs e)
@@ -93,9 +100,8 @@ namespace PROCESAMIENTO_DE_IMAGENES
             */
         }
 
-        private void BtnHistogram_Click(object sender, EventArgs e)
+        private void GenerateHistogram()
         {
-
             if (bmp != null)
             {
                 Color color;
@@ -127,7 +133,6 @@ namespace PROCESAMIENTO_DE_IMAGENES
                 panelHistogram.Controls.Add(activeForm);
                 activeForm.Show();
             }
-
         }
     }
 }
