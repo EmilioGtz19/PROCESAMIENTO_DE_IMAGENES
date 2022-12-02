@@ -32,7 +32,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnNegative = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGrayScale = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClean = new FontAwesome.Sharp.IconButton();
@@ -51,12 +51,14 @@
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.btnNegative);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Controls.Add(this.btnGrayScale);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 638);
+            this.groupBox1.Location = new System.Drawing.Point(16, 785);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(593, 96);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(791, 118);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
@@ -67,9 +69,10 @@
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(458, 26);
+            this.button4.Location = new System.Drawing.Point(611, 32);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(128, 51);
+            this.button4.Size = new System.Drawing.Size(171, 63);
             this.button4.TabIndex = 4;
             this.button4.Text = "Ruido";
             this.button4.UseVisualStyleBackColor = false;
@@ -80,9 +83,10 @@
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(306, 26);
+            this.button3.Location = new System.Drawing.Point(408, 32);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(128, 51);
+            this.button3.Size = new System.Drawing.Size(171, 63);
             this.button3.TabIndex = 3;
             this.button3.Text = "Sepia";
             this.button3.UseVisualStyleBackColor = false;
@@ -93,26 +97,29 @@
             this.btnNegative.FlatAppearance.BorderSize = 0;
             this.btnNegative.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.btnNegative.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNegative.Location = new System.Drawing.Point(158, 26);
+            this.btnNegative.Location = new System.Drawing.Point(211, 32);
+            this.btnNegative.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNegative.Name = "btnNegative";
-            this.btnNegative.Size = new System.Drawing.Size(128, 51);
+            this.btnNegative.Size = new System.Drawing.Size(171, 63);
             this.btnNegative.TabIndex = 2;
             this.btnNegative.Text = "Negativo";
             this.btnNegative.UseVisualStyleBackColor = false;
             this.btnNegative.Click += new System.EventHandler(this.BtnNegative_Click);
             // 
-            // button1
+            // btnGrayScale
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(8, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 51);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Escala de Grises";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnGrayScale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnGrayScale.FlatAppearance.BorderSize = 0;
+            this.btnGrayScale.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
+            this.btnGrayScale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrayScale.Location = new System.Drawing.Point(11, 32);
+            this.btnGrayScale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGrayScale.Name = "btnGrayScale";
+            this.btnGrayScale.Size = new System.Drawing.Size(171, 63);
+            this.btnGrayScale.TabIndex = 1;
+            this.btnGrayScale.Text = "Escala de Grises";
+            this.btnGrayScale.UseVisualStyleBackColor = false;
+            this.btnGrayScale.Click += new System.EventHandler(this.btnGrayScale_Click);
             // 
             // panel1
             // 
@@ -120,18 +127,20 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(930, 60);
+            this.panel1.Size = new System.Drawing.Size(1240, 74);
             this.panel1.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 44);
+            this.label1.Size = new System.Drawing.Size(276, 54);
             this.label1.TabIndex = 0;
             this.label1.Text = "Editar Video";
             // 
@@ -141,16 +150,17 @@
             this.btnClean.FlatAppearance.BorderSize = 0;
             this.btnClean.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClean.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClean.ForeColor = System.Drawing.Color.White;
             this.btnClean.IconChar = FontAwesome.Sharp.IconChar.Eraser;
             this.btnClean.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(0)))), ((int)(((byte)(221)))));
             this.btnClean.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClean.IconSize = 40;
             this.btnClean.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClean.Location = new System.Drawing.Point(720, 308);
+            this.btnClean.Location = new System.Drawing.Point(960, 379);
+            this.btnClean.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClean.Name = "btnClean";
-            this.btnClean.Size = new System.Drawing.Size(180, 51);
+            this.btnClean.Size = new System.Drawing.Size(240, 63);
             this.btnClean.TabIndex = 7;
             this.btnClean.Text = "Limpiar";
             this.btnClean.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -163,16 +173,17 @@
             this.btnDownload.FlatAppearance.BorderSize = 0;
             this.btnDownload.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.btnDownload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDownload.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDownload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownload.ForeColor = System.Drawing.Color.White;
             this.btnDownload.IconChar = FontAwesome.Sharp.IconChar.Download;
             this.btnDownload.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(0)))), ((int)(((byte)(221)))));
             this.btnDownload.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDownload.IconSize = 40;
             this.btnDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDownload.Location = new System.Drawing.Point(720, 238);
+            this.btnDownload.Location = new System.Drawing.Point(960, 293);
+            this.btnDownload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(180, 51);
+            this.btnDownload.Size = new System.Drawing.Size(240, 63);
             this.btnDownload.TabIndex = 6;
             this.btnDownload.Text = "Guardar Video";
             this.btnDownload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -185,16 +196,17 @@
             this.btnUpload.FlatAppearance.BorderSize = 0;
             this.btnUpload.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.btnUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpload.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpload.ForeColor = System.Drawing.Color.White;
             this.btnUpload.IconChar = FontAwesome.Sharp.IconChar.Upload;
             this.btnUpload.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(0)))), ((int)(((byte)(221)))));
             this.btnUpload.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnUpload.IconSize = 40;
             this.btnUpload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpload.Location = new System.Drawing.Point(720, 169);
+            this.btnUpload.Location = new System.Drawing.Point(960, 208);
+            this.btnUpload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpload.Name = "btnUpload";
-            this.btnUpload.Size = new System.Drawing.Size(180, 51);
+            this.btnUpload.Size = new System.Drawing.Size(240, 63);
             this.btnUpload.TabIndex = 5;
             this.btnUpload.Text = "Cargar Video";
             this.btnUpload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -207,15 +219,16 @@
             this.btnPlay.FlatAppearance.BorderSize = 0;
             this.btnPlay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlay.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlay.ForeColor = System.Drawing.Color.White;
             this.btnPlay.IconChar = FontAwesome.Sharp.IconChar.Play;
             this.btnPlay.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(0)))), ((int)(((byte)(221)))));
             this.btnPlay.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPlay.IconSize = 40;
-            this.btnPlay.Location = new System.Drawing.Point(360, 478);
+            this.btnPlay.Location = new System.Drawing.Point(480, 588);
+            this.btnPlay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(50, 51);
+            this.btnPlay.Size = new System.Drawing.Size(67, 63);
             this.btnPlay.TabIndex = 4;
             this.btnPlay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPlay.UseVisualStyleBackColor = false;
@@ -227,15 +240,16 @@
             this.btnPause.FlatAppearance.BorderSize = 0;
             this.btnPause.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.btnPause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPause.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPause.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPause.ForeColor = System.Drawing.Color.White;
             this.btnPause.IconChar = FontAwesome.Sharp.IconChar.Pause;
             this.btnPause.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(0)))), ((int)(((byte)(221)))));
             this.btnPause.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPause.IconSize = 40;
-            this.btnPause.Location = new System.Drawing.Point(289, 478);
+            this.btnPause.Location = new System.Drawing.Point(385, 588);
+            this.btnPause.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPause.Name = "btnPause";
-            this.btnPause.Size = new System.Drawing.Size(50, 51);
+            this.btnPause.Size = new System.Drawing.Size(67, 63);
             this.btnPause.TabIndex = 3;
             this.btnPause.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPause.UseVisualStyleBackColor = false;
@@ -244,19 +258,20 @@
             // videoBox
             // 
             this.videoBox.BackgroundImage = global::PROCESAMIENTO_DE_IMAGENES.Properties.Resources.video;
-            this.videoBox.Location = new System.Drawing.Point(12, 78);
+            this.videoBox.Location = new System.Drawing.Point(16, 96);
+            this.videoBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.videoBox.Name = "videoBox";
-            this.videoBox.Size = new System.Drawing.Size(682, 365);
+            this.videoBox.Size = new System.Drawing.Size(909, 449);
             this.videoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.videoBox.TabIndex = 2;
             this.videoBox.TabStop = false;
             // 
             // frmEditVideo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(930, 815);
+            this.ClientSize = new System.Drawing.Size(1240, 1003);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClean);
@@ -266,6 +281,7 @@
             this.Controls.Add(this.btnPause);
             this.Controls.Add(this.videoBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmEditVideo";
             this.Text = "frmEditVideo";
             this.groupBox1.ResumeLayout(false);
@@ -289,6 +305,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnNegative;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGrayScale;
     }
 }

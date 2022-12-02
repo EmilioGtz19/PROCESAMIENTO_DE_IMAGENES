@@ -15,19 +15,20 @@ namespace PROCESAMIENTO_DE_IMAGENES
     {
         VideoCapture video;
         bool pause = false;
+
         
-        private Color actualColor;
-        private Color newColor;
         private Bitmap bmpVideo;
-        private int bmpWidth;
-        private int bmpHeight;
+        private Bitmap original;
+        private SaveFileDialog saveAvi;
+        private Color actualColor, newColor;
+        private int filter;
 
         public frmEditVideo()
         {
             InitializeComponent();
         }
 
-        private void BtnUpload_ClickAsync(object sender, EventArgs e)
+        private async void BtnUpload_ClickAsync(object sender, EventArgs e)
         {
             OpenFileDialog OpenVideo = new OpenFileDialog
             {
@@ -38,9 +39,44 @@ namespace PROCESAMIENTO_DE_IMAGENES
             {
                 video = new VideoCapture(OpenVideo.FileName);
                 Mat mat = new Mat();
-                video.Read(mat);
-                videoBox.Image = mat.Bitmap;
-                videoBox.SizeMode = PictureBoxSizeMode.StretchImage;              
+
+                Bitmap originalImage = mat.Bitmap;
+
+                while (!pause)
+                {
+                    video.Read(mat);
+                    if (!mat.IsEmpty)
+                    {
+                        bmpVideo = mat.Bitmap;
+                        original = mat.Bitmap;
+                        switch (filter)
+                        {
+                            case 0:
+                                bmpVideo = mat.Bitmap;
+                                break;
+                            case 1:
+                                negative();
+                                break;
+                            case 2:
+                                scaleGray();
+                                break;
+                            default:
+                                bmpVideo = mat.Bitmap;
+                                break;
+                        }
+
+                        videoBox.Image = bmpVideo;
+                        videoBox.SizeMode = PictureBoxSizeMode.StretchImage;
+
+
+                        double fps = video.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.Fps);
+                        await Task.Delay(1000 / Convert.ToInt32(fps));
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
             }
         }
 
@@ -51,19 +87,18 @@ namespace PROCESAMIENTO_DE_IMAGENES
                 MessageBox.Show("Ningun video cargado", "Reproducir", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            Mat mat = new Mat();
 
             pause = false;
             while (!pause)
             {
-                Mat mat = new Mat();
+
                 video.Read(mat);
 
                 if (!mat.IsEmpty)
                 {
                     videoBox.Image = mat.Bitmap;
                     bmpVideo = mat.Bitmap;
-                    bmpWidth = bmpVideo.Width;
-                    bmpHeight = bmpVideo.Height;
                     double fps = video.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.Fps);
                     await Task.Delay(1000 / Convert.ToInt32(fps));
                 }
@@ -71,6 +106,7 @@ namespace PROCESAMIENTO_DE_IMAGENES
                 {
                     break;
                 }
+
             }
         }
 
@@ -104,28 +140,50 @@ namespace PROCESAMIENTO_DE_IMAGENES
 
         private void BtnDownload_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void BtnNegative_Click(object sender, EventArgs e)
         {
+            filter = 1;
+        }
+
+        private void negative()
+        {          
+            videoBox.Image = bmpVideo;
+            bmpVideo = new Bitmap(original.Width, original.Height);
+
+            for (int j = 0; j < original.Width; j++)
+                for (int i = 0; i < original.Height; i++)
+                {
+                    actualColor = original.GetPixel(j, i);
+                    newColor = Color.FromArgb(255 - actualColor.R,255 - actualColor.G, 255 - actualColor.B);
+                    bmpVideo.SetPixel(j, i, newColor);
+                }
+        }
+
+        private void scaleGray()
+        {
             if (bmpVideo != null)
             {
-                Bitmap finalColor = new Bitmap(bmpWidth, bmpHeight);
+                videoBox.Image = bmpVideo;
+                bmpVideo = new Bitmap(original.Width, original.Height);
 
-                for (int j = 0; j < bmpWidth; j++)
-                    for (int i = 0; i < bmpHeight; i++)
+                for (int j = 0; j < original.Width; j++)
+                    for (int i = 0; i < original.Height; i++)
                     {
-                        actualColor = bmpVideo.GetPixel(j, i);
-                        newColor = Color.FromArgb(255 - actualColor.R, 255 - actualColor.G, 255 - actualColor.B);
-                        finalColor.SetPixel(j, i, newColor);
+                        actualColor = original.GetPixel(j, i);
+                        newColor = Color.FromArgb(actualColor.R, actualColor.R, actualColor.R);
+                        bmpVideo.SetPixel(j, i, newColor);
                     }
-                Mat mat = new Mat();
-                video.Read(mat);
-                videoBox.Image = finalColor;
-                videoBox.Image = mat.Bitmap;
-                bmpVideo = finalColor;               
+
+          
             }
+        }
+
+        private void btnGrayScale_Click(object sender, EventArgs e)
+        {
+            filter = 2;
         }
     }
 }
