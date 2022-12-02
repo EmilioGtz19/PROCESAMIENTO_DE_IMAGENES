@@ -30,11 +30,10 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnChromatic = new System.Windows.Forms.Button();
             this.btnSepia = new System.Windows.Forms.Button();
             this.btnNoise = new System.Windows.Forms.Button();
             this.btnNegative = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.btnGrayscale = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelHistogram = new System.Windows.Forms.Panel();
@@ -59,11 +58,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.btnChromatic);
             this.groupBox1.Controls.Add(this.btnSepia);
             this.groupBox1.Controls.Add(this.btnNoise);
             this.groupBox1.Controls.Add(this.btnNegative);
-            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btnGrayscale);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
@@ -74,18 +72,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
-            // button6
+            // btnChromatic
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(314, 114);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(128, 51);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Pixelado";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnChromatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnChromatic.FlatAppearance.BorderSize = 0;
+            this.btnChromatic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
+            this.btnChromatic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChromatic.Location = new System.Drawing.Point(245, 114);
+            this.btnChromatic.Name = "btnChromatic";
+            this.btnChromatic.Size = new System.Drawing.Size(128, 51);
+            this.btnChromatic.TabIndex = 5;
+            this.btnChromatic.Text = "Aberración cromática";
+            this.btnChromatic.UseVisualStyleBackColor = false;
+            this.btnChromatic.Click += new System.EventHandler(this.BtnChromatic_Click);
             // 
             // btnSepia
             // 
@@ -107,7 +106,7 @@
             this.btnNoise.FlatAppearance.BorderSize = 0;
             this.btnNoise.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.btnNoise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNoise.Location = new System.Drawing.Point(161, 114);
+            this.btnNoise.Location = new System.Drawing.Point(68, 114);
             this.btnNoise.Name = "btnNoise";
             this.btnNoise.Size = new System.Drawing.Size(128, 51);
             this.btnNoise.TabIndex = 3;
@@ -128,19 +127,6 @@
             this.btnNegative.Text = "Negativo";
             this.btnNegative.UseVisualStyleBackColor = false;
             this.btnNegative.Click += new System.EventHandler(this.btnNegative_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(6, 114);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 51);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Blur";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // btnGrayscale
             // 
@@ -283,8 +269,7 @@
         private System.Windows.Forms.Button btnSepia;
         private System.Windows.Forms.Button btnNoise;
         private System.Windows.Forms.Button btnNegative;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnChromatic;
         private System.Windows.Forms.Panel panelHistogram;
     }
 }

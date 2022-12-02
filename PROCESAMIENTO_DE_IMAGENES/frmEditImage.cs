@@ -27,7 +27,7 @@ namespace PROCESAMIENTO_DE_IMAGENES
 
         public frmEditImage()
         {
-            InitializeComponent();          
+            InitializeComponent();
         }
 
         private void BtnUpload_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace PROCESAMIENTO_DE_IMAGENES
                 bmpWidth = bmp.Width;
                 bmpHeight = bmp.Height;
             }
-              
+
             OpenImage.Dispose();
             GenerateHistogram();
 
@@ -71,19 +71,19 @@ namespace PROCESAMIENTO_DE_IMAGENES
             {
                 MessageBox.Show("Ninguna imagen cargada", "Limpiar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void BtnDownload_Click(object sender, EventArgs e)
         {
-            
+
             if (picBox.Image != null)
             {
                 SaveFileDialog save = new SaveFileDialog();
                 save.Filter = "JPEG(*.JPG)|*.JPG|BMP(*.BMP)|*.BMP";
                 Image Imagen = picBox.Image;
-                
-                if(save.ShowDialog() == DialogResult.OK)
+
+                if (save.ShowDialog() == DialogResult.OK)
                 {
                     Imagen.Save(save.FileName);
                 }
@@ -92,13 +92,13 @@ namespace PROCESAMIENTO_DE_IMAGENES
             {
                 MessageBox.Show("Ninguna imagen cargada", "Guardar Imagen", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void BtnGrayscale_Click(object sender, EventArgs e)
         {
-            
-            if(bmp != null)
+
+            if (bmp != null)
             {
                 Bitmap finalColor = new Bitmap(bmpWidth, bmpHeight);
 
@@ -114,13 +114,13 @@ namespace PROCESAMIENTO_DE_IMAGENES
                 bmp = finalColor;
                 GenerateHistogram();
             }
-            
+
         }
 
         private void btnNegative_Click(object sender, EventArgs e)
         {
             if (bmp != null)
-            {             
+            {
                 Bitmap finalColor = new Bitmap(bmpWidth, bmpHeight);
 
                 for (int j = 0; j < bmpWidth; j++)
@@ -144,10 +144,10 @@ namespace PROCESAMIENTO_DE_IMAGENES
             {
                 Bitmap finalColor = new Bitmap(bmpWidth, bmpHeight);
 
-                for(int j = 0; j < bmpWidth; j++)
-                    for(int i = 0; i < bmpHeight; i++)
+                for (int j = 0; j < bmpWidth; j++)
+                    for (int i = 0; i < bmpHeight; i++)
                     {
-                        actualColor = bmp.GetPixel(j,i);
+                        actualColor = bmp.GetPixel(j, i);
 
                         int a = actualColor.A;
                         int r = actualColor.R;
@@ -160,13 +160,13 @@ namespace PROCESAMIENTO_DE_IMAGENES
 
                         if (tempR > 255) r = 255;
                         else r = tempR;
-                        
-                        if(tempG > 255) g = 255;
+
+                        if (tempG > 255) g = 255;
                         else g = tempG;
-                        
-                        if(tempB > 255) b = 255;                        
+
+                        if (tempB > 255) b = 255;
                         else b = tempB;
-                        
+
                         finalColor.SetPixel(j, i, Color.FromArgb(a, r, g, b));
                     }
 
@@ -224,6 +224,36 @@ namespace PROCESAMIENTO_DE_IMAGENES
             }
         }
 
+        private void BtnChromatic_Click(object sender, EventArgs e)
+        {
+            int aberrationSize = 5;
+            int r = 0;
+            int g = 0;
+            int b = 0;
+
+            Bitmap finalColor = new Bitmap(bmpWidth, bmpHeight);
+
+            for (int j = 0; j < bmpWidth; j++)
+                for (int i = 0; i < bmpHeight; i++)
+                {
+                    g = bmp.GetPixel(j, i).G;
+
+                    if (j + aberrationSize < bmpWidth)
+                        r = bmp.GetPixel(j + aberrationSize, i).R;
+                    else
+                        r = 0;
+
+                    if (j - aberrationSize >= 0)
+                        b = bmp.GetPixel(j - aberrationSize, i).B;
+
+                    finalColor.SetPixel(j, i, Color.FromArgb(r, g, b));
+                }
+
+            picBox.Image = finalColor;
+            bmp = finalColor;
+            GenerateHistogram();
+        }
+
         private void GenerateHistogram()
         {
             if (bmp != null)
@@ -257,6 +287,8 @@ namespace PROCESAMIENTO_DE_IMAGENES
                 panelHistogram.Controls.Add(activeForm);
                 activeForm.Show();
             }
-        }       
+        }
+
+        
     }
 }
