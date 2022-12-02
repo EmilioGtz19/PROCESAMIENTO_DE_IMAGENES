@@ -15,7 +15,12 @@ namespace PROCESAMIENTO_DE_IMAGENES
     {
         VideoCapture video;
         bool pause = false;
-        Bitmap bmpVideo;
+        
+        private Color actualColor;
+        private Color newColor;
+        private Bitmap bmpVideo;
+        private int bmpWidth;
+        private int bmpHeight;
 
         public frmEditVideo()
         {
@@ -56,6 +61,9 @@ namespace PROCESAMIENTO_DE_IMAGENES
                 if (!mat.IsEmpty)
                 {
                     videoBox.Image = mat.Bitmap;
+                    bmpVideo = mat.Bitmap;
+                    bmpWidth = bmpVideo.Width;
+                    bmpHeight = bmpVideo.Height;
                     double fps = video.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.Fps);
                     await Task.Delay(1000 / Convert.ToInt32(fps));
                 }
@@ -97,6 +105,27 @@ namespace PROCESAMIENTO_DE_IMAGENES
         private void BtnDownload_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void BtnNegative_Click(object sender, EventArgs e)
+        {
+            if (bmpVideo != null)
+            {
+                Bitmap finalColor = new Bitmap(bmpWidth, bmpHeight);
+
+                for (int j = 0; j < bmpWidth; j++)
+                    for (int i = 0; i < bmpHeight; i++)
+                    {
+                        actualColor = bmpVideo.GetPixel(j, i);
+                        newColor = Color.FromArgb(255 - actualColor.R, 255 - actualColor.G, 255 - actualColor.B);
+                        finalColor.SetPixel(j, i, newColor);
+                    }
+                Mat mat = new Mat();
+                video.Read(mat);
+                videoBox.Image = finalColor;
+                videoBox.Image = mat.Bitmap;
+                bmpVideo = finalColor;               
+            }
         }
     }
 }

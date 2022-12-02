@@ -99,6 +99,7 @@
             this.btnNegative.TabIndex = 2;
             this.btnNegative.Text = "Negativo";
             this.btnNegative.UseVisualStyleBackColor = false;
+            this.btnNegative.Click += new System.EventHandler(this.BtnNegative_Click);
             // 
             // button1
             // 
