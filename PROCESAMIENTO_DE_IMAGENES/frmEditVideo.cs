@@ -55,13 +55,16 @@ namespace PROCESAMIENTO_DE_IMAGENES
                                 bmpVideo = mat.Bitmap;
                                 break;
                             case 1:
-                                negative();
+                                Negative();
                                 break;
                             case 2:
-                                grayScale();
+                                GrayScale();
                                 break;
                             case 3:
-                                sepia();
+                                Sepia();
+                                break;
+                            case 4:
+                                Noise();
                                 break;
                             default:
                                 bmpVideo = mat.Bitmap;
@@ -151,23 +154,69 @@ namespace PROCESAMIENTO_DE_IMAGENES
         
 
 
+        private void Noise()
+        {
+            if (bmpVideo != null)
+            {
+                int percentage = 150;
+                int minRange = 85;
+                int maxRange = 115;
+                float brightness;
+                Random rand = new Random();
+                int r, g, b;
+                videoBox.Image = bmpVideo;
+                bmpVideo = new Bitmap(original.Width, original.Height);
 
+                for (int j = 0; j < original.Width; j++)
+                    for (int i = 0; i < original.Height; i++)
+                    {
+                        if (rand.Next(1, 100) <= percentage)
+                        {
+                            brightness = rand.Next(minRange, maxRange) / 100.0f;
+                            actualColor = original.GetPixel(j, i);
 
-        private void negative()
-        {          
-            videoBox.Image = bmpVideo;
-            bmpVideo = new Bitmap(original.Width, original.Height);
+                            r = (int)(actualColor.R * brightness);
+                            g = (int)(actualColor.G * brightness);
+                            b = (int)(actualColor.B * brightness);
 
-            for (int j = 0; j < original.Width; j++)
-                for (int i = 0; i < original.Height; i++)
-                {
-                    actualColor = original.GetPixel(j, i);
-                    newColor = Color.FromArgb(255 - actualColor.R,255 - actualColor.G, 255 - actualColor.B);
-                    bmpVideo.SetPixel(j, i, newColor);
-                }
+                            if (r > 255) r = 255;
+                            else if (r < 0) r = 0;
+
+                            if (g > 255) g = 255;
+                            else if (g < 0) g = 0;
+
+                            if (b > 255) b = 255;
+                            else if (b < 0) b = 0;
+
+                            newColor = Color.FromArgb(r, g, b);
+                        }
+                        else
+                        {
+                            newColor = original.GetPixel(j, i);
+                        }
+                        bmpVideo.SetPixel(j, i, newColor);
+                    }
+            }
         }
 
-        private void grayScale()
+        private void Negative()
+        {
+            if (bmpVideo != null)
+            {
+                videoBox.Image = bmpVideo;
+                bmpVideo = new Bitmap(original.Width, original.Height);
+
+                for (int j = 0; j < original.Width; j++)
+                    for (int i = 0; i < original.Height; i++)
+                    {
+                        actualColor = original.GetPixel(j, i);
+                        newColor = Color.FromArgb(255 - actualColor.R, 255 - actualColor.G, 255 - actualColor.B);
+                        bmpVideo.SetPixel(j, i, newColor);
+                    }
+            }
+        }
+
+        private void GrayScale()
         {
             if (bmpVideo != null)
             {
@@ -186,7 +235,7 @@ namespace PROCESAMIENTO_DE_IMAGENES
             }
         }
 
-        private void sepia()
+        private void Sepia()
         {
             if (bmpVideo != null)
             {
@@ -236,5 +285,9 @@ namespace PROCESAMIENTO_DE_IMAGENES
             filter = 3;
         }
 
+        private void btnNoise_Click(object sender, EventArgs e)
+        {
+            filter = 4;
+        }
     }
 }

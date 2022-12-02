@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnNoise = new System.Windows.Forms.Button();
             this.btnSepia = new System.Windows.Forms.Button();
             this.btnNegative = new System.Windows.Forms.Button();
             this.btnGrayScale = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.btnNoise);
             this.groupBox1.Controls.Add(this.btnSepia);
             this.groupBox1.Controls.Add(this.btnNegative);
             this.groupBox1.Controls.Add(this.btnGrayScale);
@@ -63,19 +63,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
             // 
-            // button4
+            // btnNoise
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(611, 32);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(171, 63);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Ruido";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnNoise.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnNoise.FlatAppearance.BorderSize = 0;
+            this.btnNoise.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
+            this.btnNoise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNoise.Location = new System.Drawing.Point(611, 32);
+            this.btnNoise.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNoise.Name = "btnNoise";
+            this.btnNoise.Size = new System.Drawing.Size(171, 63);
+            this.btnNoise.TabIndex = 4;
+            this.btnNoise.Text = "Ruido";
+            this.btnNoise.UseVisualStyleBackColor = false;
+            this.btnNoise.Click += new System.EventHandler(this.btnNoise_Click);
             // 
             // btnSepia
             // 
@@ -303,7 +304,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnNoise;
         private System.Windows.Forms.Button btnSepia;
         private System.Windows.Forms.Button btnNegative;
         private System.Windows.Forms.Button btnGrayScale;
