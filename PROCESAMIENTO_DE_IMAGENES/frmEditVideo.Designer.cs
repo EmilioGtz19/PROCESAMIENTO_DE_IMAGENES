@@ -30,7 +30,7 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSepia = new System.Windows.Forms.Button();
             this.btnNegative = new System.Windows.Forms.Button();
             this.btnGrayScale = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -49,15 +49,15 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btnSepia);
             this.groupBox1.Controls.Add(this.btnNegative);
             this.groupBox1.Controls.Add(this.btnGrayScale);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(16, 785);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(791, 118);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
@@ -70,26 +70,27 @@
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(611, 32);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(171, 63);
             this.button4.TabIndex = 4;
             this.button4.Text = "Ruido";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnSepia
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(408, 32);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(171, 63);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Sepia";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnSepia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnSepia.FlatAppearance.BorderSize = 0;
+            this.btnSepia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
+            this.btnSepia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSepia.Location = new System.Drawing.Point(408, 32);
+            this.btnSepia.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSepia.Name = "btnSepia";
+            this.btnSepia.Size = new System.Drawing.Size(171, 63);
+            this.btnSepia.TabIndex = 3;
+            this.btnSepia.Text = "Sepia";
+            this.btnSepia.UseVisualStyleBackColor = false;
+            this.btnSepia.Click += new System.EventHandler(this.btnSepia_Click);
             // 
             // btnNegative
             // 
@@ -98,7 +99,7 @@
             this.btnNegative.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.btnNegative.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNegative.Location = new System.Drawing.Point(211, 32);
-            this.btnNegative.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNegative.Margin = new System.Windows.Forms.Padding(4);
             this.btnNegative.Name = "btnNegative";
             this.btnNegative.Size = new System.Drawing.Size(171, 63);
             this.btnNegative.TabIndex = 2;
@@ -113,7 +114,7 @@
             this.btnGrayScale.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.btnGrayScale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrayScale.Location = new System.Drawing.Point(11, 32);
-            this.btnGrayScale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGrayScale.Margin = new System.Windows.Forms.Padding(4);
             this.btnGrayScale.Name = "btnGrayScale";
             this.btnGrayScale.Size = new System.Drawing.Size(171, 63);
             this.btnGrayScale.TabIndex = 1;
@@ -127,7 +128,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1240, 74);
             this.panel1.TabIndex = 9;
@@ -158,7 +159,7 @@
             this.btnClean.IconSize = 40;
             this.btnClean.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClean.Location = new System.Drawing.Point(960, 379);
-            this.btnClean.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClean.Margin = new System.Windows.Forms.Padding(4);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(240, 63);
             this.btnClean.TabIndex = 7;
@@ -181,7 +182,7 @@
             this.btnDownload.IconSize = 40;
             this.btnDownload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDownload.Location = new System.Drawing.Point(960, 293);
-            this.btnDownload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDownload.Margin = new System.Windows.Forms.Padding(4);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.Size = new System.Drawing.Size(240, 63);
             this.btnDownload.TabIndex = 6;
@@ -204,7 +205,7 @@
             this.btnUpload.IconSize = 40;
             this.btnUpload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpload.Location = new System.Drawing.Point(960, 208);
-            this.btnUpload.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpload.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpload.Name = "btnUpload";
             this.btnUpload.Size = new System.Drawing.Size(240, 63);
             this.btnUpload.TabIndex = 5;
@@ -226,7 +227,7 @@
             this.btnPlay.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPlay.IconSize = 40;
             this.btnPlay.Location = new System.Drawing.Point(480, 588);
-            this.btnPlay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPlay.Margin = new System.Windows.Forms.Padding(4);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(67, 63);
             this.btnPlay.TabIndex = 4;
@@ -247,7 +248,7 @@
             this.btnPause.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPause.IconSize = 40;
             this.btnPause.Location = new System.Drawing.Point(385, 588);
-            this.btnPause.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPause.Margin = new System.Windows.Forms.Padding(4);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(67, 63);
             this.btnPause.TabIndex = 3;
@@ -259,7 +260,7 @@
             // 
             this.videoBox.BackgroundImage = global::PROCESAMIENTO_DE_IMAGENES.Properties.Resources.video;
             this.videoBox.Location = new System.Drawing.Point(16, 96);
-            this.videoBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.videoBox.Margin = new System.Windows.Forms.Padding(4);
             this.videoBox.Name = "videoBox";
             this.videoBox.Size = new System.Drawing.Size(909, 449);
             this.videoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -281,7 +282,7 @@
             this.Controls.Add(this.btnPause);
             this.Controls.Add(this.videoBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEditVideo";
             this.Text = "frmEditVideo";
             this.groupBox1.ResumeLayout(false);
@@ -303,7 +304,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSepia;
         private System.Windows.Forms.Button btnNegative;
         private System.Windows.Forms.Button btnGrayScale;
     }

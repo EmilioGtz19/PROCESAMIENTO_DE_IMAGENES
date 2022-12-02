@@ -58,7 +58,10 @@ namespace PROCESAMIENTO_DE_IMAGENES
                                 negative();
                                 break;
                             case 2:
-                                scaleGray();
+                                grayScale();
+                                break;
+                            case 3:
+                                sepia();
                                 break;
                             default:
                                 bmpVideo = mat.Bitmap;
@@ -79,6 +82,8 @@ namespace PROCESAMIENTO_DE_IMAGENES
                 }
             }
         }
+
+
 
         private async void BtnPlay_Click(object sender, EventArgs e)
         {
@@ -143,10 +148,10 @@ namespace PROCESAMIENTO_DE_IMAGENES
 
         }
 
-        private void BtnNegative_Click(object sender, EventArgs e)
-        {
-            filter = 1;
-        }
+        
+
+
+
 
         private void negative()
         {          
@@ -162,7 +167,7 @@ namespace PROCESAMIENTO_DE_IMAGENES
                 }
         }
 
-        private void scaleGray()
+        private void grayScale()
         {
             if (bmpVideo != null)
             {
@@ -181,9 +186,55 @@ namespace PROCESAMIENTO_DE_IMAGENES
             }
         }
 
+        private void sepia()
+        {
+            if (bmpVideo != null)
+            {
+                videoBox.Image = bmpVideo;
+                bmpVideo = new Bitmap(original.Width, original.Height);
+
+                for (int j = 0; j < original.Width; j++)
+                    for (int i = 0; i < original.Height; i++)
+                    {
+                        actualColor = original.GetPixel(j, i);
+
+                        int a = actualColor.A;
+                        int r = actualColor.R;
+                        int g = actualColor.G;
+                        int b = actualColor.B;
+
+                        int tempR = (int)(0.393 * r + 0.769 * g + 0.189 * b);
+                        int tempG = (int)(0.349 * r + 0.686 * g + 0.168 * b);
+                        int tempB = (int)(0.272 * r + 0.534 * g + 0.131 * b);
+
+                        if (tempR > 255) r = 255;
+                        else r = tempR;
+
+                        if (tempG > 255) g = 255;
+                        else g = tempG;
+
+                        if (tempB > 255) b = 255;
+                        else b = tempB;
+
+                        bmpVideo.SetPixel(j, i, Color.FromArgb(a, r, g, b));
+                    }
+            }
+        }
+
+        private void BtnNegative_Click(object sender, EventArgs e)
+        {
+            filter = 1;
+        }
+
         private void btnGrayScale_Click(object sender, EventArgs e)
         {
             filter = 2;
         }
+
+        private void btnSepia_Click(object sender, EventArgs e)
+        {
+            filter = 3;
+        }
+
     }
 }
