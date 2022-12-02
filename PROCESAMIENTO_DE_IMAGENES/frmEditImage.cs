@@ -60,6 +60,11 @@ namespace PROCESAMIENTO_DE_IMAGENES
                 {
                     picBox.Image.Dispose();
                     picBox.Image = null;
+                    if (activeForm != null)
+                    {
+                        activeForm.Close();
+                        activeForm.Dispose();
+                    }
                 }
             }
             else
@@ -153,33 +158,64 @@ namespace PROCESAMIENTO_DE_IMAGENES
                         int tempG = (int)(0.349 * r + 0.686 * g + 0.168 * b);
                         int tempB = (int)(0.272 * r + 0.534 * g + 0.131 * b);
 
-                        if (tempR > 255)
-                        {
-                            r = 255;
-                        }
-                        else
-                        {
-                            r = tempR;
-                        }
-
-                        if(tempG > 255)
-                        {
-                            g = 255;
-                        }
-                        else
-                        {
-                            g = tempG;
-                        }
-                        if(tempB > 255)
-                        {
-                            b = 255;
-                        }
-                        else
-                        {
-                            b = tempB;
-                        }
-
+                        if (tempR > 255) r = 255;
+                        else r = tempR;
+                        
+                        if(tempG > 255) g = 255;
+                        else g = tempG;
+                        
+                        if(tempB > 255) b = 255;                        
+                        else b = tempB;
+                        
                         finalColor.SetPixel(j, i, Color.FromArgb(a, r, g, b));
+                    }
+
+                picBox.Image = finalColor;
+                bmp = finalColor;
+                GenerateHistogram();
+            }
+        }
+
+        private void BtnNoise_Click(object sender, EventArgs e)
+        {
+            if (bmp != null)
+            {
+                int percentage = 150;
+                int minRange = 85;
+                int maxRange = 115;
+                float brightness;
+                Random rand = new Random();
+                int r, g, b;
+                Bitmap finalColor = new Bitmap(bmpWidth, bmpHeight);
+
+                for (int j = 0; j < bmpWidth; j++)
+                    for (int i = 0; i < bmpHeight; i++)
+                    {
+                        if (rand.Next(1, 100) <= percentage)
+                        {
+                            brightness = rand.Next(minRange, maxRange) / 100.0f;
+                            actualColor = bmp.GetPixel(j, i);
+
+                            r = (int)(actualColor.R * brightness);
+                            g = (int)(actualColor.G * brightness);
+                            b = (int)(actualColor.B * brightness);
+
+                            if (r > 255) r = 255;
+                            else if (r < 0) r = 0;
+
+                            if (g > 255) g = 255;
+                            else if (g < 0) g = 0;
+
+                            if (b > 255) b = 255;
+                            else if (b < 0) b = 0;
+
+                            newColor = Color.FromArgb(r, g, b);
+                        }
+                        else
+                        {
+                            newColor = bmp.GetPixel(j, i);
+                        }
+                        finalColor.SetPixel(j, i, newColor);
                     }
 
                 picBox.Image = finalColor;
@@ -221,7 +257,6 @@ namespace PROCESAMIENTO_DE_IMAGENES
                 panelHistogram.Controls.Add(activeForm);
                 activeForm.Show();
             }
-        }
-
+        }       
     }
 }
