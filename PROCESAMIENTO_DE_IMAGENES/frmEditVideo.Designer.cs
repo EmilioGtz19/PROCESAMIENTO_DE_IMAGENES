@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnNegative = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,54 +40,26 @@
             this.btnUpload = new FontAwesome.Sharp.IconButton();
             this.btnPlay = new FontAwesome.Sharp.IconButton();
             this.btnPause = new FontAwesome.Sharp.IconButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.videoBox = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.videoBox)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnNegative);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 638);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(888, 96);
+            this.groupBox1.Size = new System.Drawing.Size(593, 96);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(754, 26);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(128, 51);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Pixelado";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(455, 26);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(128, 51);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Blur";
-            this.button5.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
@@ -97,11 +67,11 @@
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(605, 26);
+            this.button4.Location = new System.Drawing.Point(458, 26);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(128, 51);
             this.button4.TabIndex = 4;
-            this.button4.Text = "Ruido Sal y Pimienta";
+            this.button4.Text = "Ruido";
             this.button4.UseVisualStyleBackColor = false;
             // 
             // button3
@@ -117,18 +87,18 @@
             this.button3.Text = "Sepia";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnNegative
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(158, 26);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 51);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Negativo";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnNegative.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnNegative.FlatAppearance.BorderSize = 0;
+            this.btnNegative.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
+            this.btnNegative.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNegative.Location = new System.Drawing.Point(158, 26);
+            this.btnNegative.Name = "btnNegative";
+            this.btnNegative.Size = new System.Drawing.Size(128, 51);
+            this.btnNegative.TabIndex = 2;
+            this.btnNegative.Text = "Negativo";
+            this.btnNegative.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -184,6 +154,7 @@
             this.btnClean.Text = "Limpiar";
             this.btnClean.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClean.UseVisualStyleBackColor = false;
+            this.btnClean.Click += new System.EventHandler(this.BtnClean_Click);
             // 
             // btnDownload
             // 
@@ -205,6 +176,7 @@
             this.btnDownload.Text = "Guardar Video";
             this.btnDownload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDownload.UseVisualStyleBackColor = false;
+            this.btnDownload.Click += new System.EventHandler(this.BtnDownload_Click);
             // 
             // btnUpload
             // 
@@ -226,6 +198,7 @@
             this.btnUpload.Text = "Cargar Video";
             this.btnUpload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUpload.UseVisualStyleBackColor = false;
+            this.btnUpload.Click += new System.EventHandler(this.BtnUpload_ClickAsync);
             // 
             // btnPlay
             // 
@@ -245,6 +218,7 @@
             this.btnPlay.TabIndex = 4;
             this.btnPlay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPlay.UseVisualStyleBackColor = false;
+            this.btnPlay.Click += new System.EventHandler(this.BtnPlay_Click);
             // 
             // btnPause
             // 
@@ -264,15 +238,17 @@
             this.btnPause.TabIndex = 3;
             this.btnPause.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnPause.UseVisualStyleBackColor = false;
+            this.btnPause.Click += new System.EventHandler(this.BtnPause_Click);
             // 
-            // pictureBox1
+            // videoBox
             // 
-            this.pictureBox1.Image = global::PROCESAMIENTO_DE_IMAGENES.Properties.Resources.video;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 78);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(682, 365);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.videoBox.BackgroundImage = global::PROCESAMIENTO_DE_IMAGENES.Properties.Resources.video;
+            this.videoBox.Location = new System.Drawing.Point(12, 78);
+            this.videoBox.Name = "videoBox";
+            this.videoBox.Size = new System.Drawing.Size(682, 365);
+            this.videoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.videoBox.TabIndex = 2;
+            this.videoBox.TabStop = false;
             // 
             // frmEditVideo
             // 
@@ -287,21 +263,20 @@
             this.Controls.Add(this.btnUpload);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.btnPause);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.videoBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEditVideo";
             this.Text = "frmEditVideo";
-            this.Load += new System.EventHandler(this.FrmEditVideo_Load);
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.videoBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox videoBox;
         private FontAwesome.Sharp.IconButton btnPause;
         private FontAwesome.Sharp.IconButton btnPlay;
         private FontAwesome.Sharp.IconButton btnClean;
@@ -310,11 +285,9 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnNegative;
         private System.Windows.Forms.Button button1;
     }
 }
