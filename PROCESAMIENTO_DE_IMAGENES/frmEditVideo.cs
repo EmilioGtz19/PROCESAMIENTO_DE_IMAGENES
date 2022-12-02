@@ -66,6 +66,9 @@ namespace PROCESAMIENTO_DE_IMAGENES
                             case 4:
                                 Noise();
                                 break;
+                            case 5:
+                                Chromatic();
+                                break;
                             default:
                                 bmpVideo = mat.Bitmap;
                                 break;
@@ -153,6 +156,35 @@ namespace PROCESAMIENTO_DE_IMAGENES
 
         
 
+        private void Chromatic()
+        {
+            if (bmpVideo != null)
+            {
+                int aberrationSize = 5;
+                int r = 0;
+                int g = 0;
+                int b = 0;
+
+                videoBox.Image = bmpVideo;
+                bmpVideo = new Bitmap(original.Width, original.Height);
+
+                for (int j = 0; j < original.Width; j++)
+                    for (int i = 0; i < original.Height; i++)
+                    {
+                        g = original.GetPixel(j, i).G;
+
+                        if (j + aberrationSize < original.Width)
+                            r = original.GetPixel(j + aberrationSize, i).R;
+                        else
+                            r = 0;
+
+                        if (j - aberrationSize >= 0)
+                            b = original.GetPixel(j - aberrationSize, i).B;
+
+                        bmpVideo.SetPixel(j, i, Color.FromArgb(r, g, b));
+                    }
+            }
+        }
 
         private void Noise()
         {
@@ -288,6 +320,11 @@ namespace PROCESAMIENTO_DE_IMAGENES
         private void btnNoise_Click(object sender, EventArgs e)
         {
             filter = 4;
+        }
+
+        private void btnChromatic_Click(object sender, EventArgs e)
+        {
+            filter = 5;
         }
     }
 }
