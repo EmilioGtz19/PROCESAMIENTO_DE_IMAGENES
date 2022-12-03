@@ -15,6 +15,7 @@ namespace PROCESAMIENTO_DE_IMAGENES
     {
 
         private Bitmap bmp;
+        private Bitmap original;
         private Form activeForm = null;
         private int[] R = new int[256];
         private int[] G = new int[256];
@@ -34,13 +35,14 @@ namespace PROCESAMIENTO_DE_IMAGENES
         {
             OpenFileDialog OpenImage = new OpenFileDialog
             {
-                Filter = "Image files (*.png)|*.png|(*.bmp)|*.bmp|(*.jpeg)|*.jpeg|(*.jpg)|*.jpg"
+                Filter = "Image files (*.jpg)|*.jpg|(*.bmp)|*.bmp|(*.jpeg)|*.jpeg|(*.png)|*.png"
             };
 
             if (OpenImage.ShowDialog() == DialogResult.OK)
             {
                 picBox.Image = new Bitmap(OpenImage.FileName);
                 bmp = new Bitmap(picBox.Image);
+                original = new Bitmap(picBox.Image);
                 bmpWidth = bmp.Width;
                 bmpHeight = bmp.Height;
             }
@@ -58,13 +60,9 @@ namespace PROCESAMIENTO_DE_IMAGENES
                 DialogResult dialogResult = MessageBox.Show("¿Estás seguro de borrar tu progreso?", "Limpiar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    picBox.Image.Dispose();
-                    picBox.Image = null;
-                    if (activeForm != null)
-                    {
-                        activeForm.Close();
-                        activeForm.Dispose();
-                    }
+                    picBox.Image = original;
+                    bmp = original;
+                    GenerateHistogram();                    
                 }
             }
             else

@@ -1,8 +1,10 @@
-﻿using Emgu.CV;
+﻿
+using Emgu.CV;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,8 @@ namespace PROCESAMIENTO_DE_IMAGENES
         
         private Bitmap bmpVideo;
         private Bitmap original;
-        private SaveFileDialog saveAvi;
         private Color actualColor, newColor;
-        private int filter;
+        private int filter;     
 
         public frmEditVideo()
         {
@@ -35,8 +36,10 @@ namespace PROCESAMIENTO_DE_IMAGENES
                 Filter = "Image files (*.mp4)|*.mp4"
             };
 
+
+
             if (OpenVideo.ShowDialog() == DialogResult.OK)
-            {
+            {              
                 video = new VideoCapture(OpenVideo.FileName);
                 Mat mat = new Mat();
 
@@ -151,10 +154,10 @@ namespace PROCESAMIENTO_DE_IMAGENES
 
         private void BtnDownload_Click(object sender, EventArgs e)
         {
-
+            
         }
 
-        
+
 
         private void Chromatic()
         {

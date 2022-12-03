@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnChromatic = new System.Windows.Forms.Button();
             this.btnNoise = new System.Windows.Forms.Button();
             this.btnSepia = new System.Windows.Forms.Button();
             this.btnNegative = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.btnPlay = new FontAwesome.Sharp.IconButton();
             this.btnPause = new FontAwesome.Sharp.IconButton();
             this.videoBox = new System.Windows.Forms.PictureBox();
-            this.btnChromatic = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.videoBox)).BeginInit();
@@ -64,6 +64,21 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros";
+            // 
+            // btnChromatic
+            // 
+            this.btnChromatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.btnChromatic.FlatAppearance.BorderSize = 0;
+            this.btnChromatic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
+            this.btnChromatic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChromatic.Location = new System.Drawing.Point(808, 32);
+            this.btnChromatic.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChromatic.Name = "btnChromatic";
+            this.btnChromatic.Size = new System.Drawing.Size(171, 63);
+            this.btnChromatic.TabIndex = 5;
+            this.btnChromatic.Text = "Aberración Cromática";
+            this.btnChromatic.UseVisualStyleBackColor = false;
+            this.btnChromatic.Click += new System.EventHandler(this.btnChromatic_Click);
             // 
             // btnNoise
             // 
@@ -262,6 +277,7 @@
             // videoBox
             // 
             this.videoBox.BackgroundImage = global::PROCESAMIENTO_DE_IMAGENES.Properties.Resources.video;
+            this.videoBox.Image = global::PROCESAMIENTO_DE_IMAGENES.Properties.Resources.video;
             this.videoBox.Location = new System.Drawing.Point(16, 96);
             this.videoBox.Margin = new System.Windows.Forms.Padding(4);
             this.videoBox.Name = "videoBox";
@@ -269,21 +285,6 @@
             this.videoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.videoBox.TabIndex = 2;
             this.videoBox.TabStop = false;
-            // 
-            // btnChromatic
-            // 
-            this.btnChromatic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
-            this.btnChromatic.FlatAppearance.BorderSize = 0;
-            this.btnChromatic.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(32)))), ((int)(((byte)(77)))));
-            this.btnChromatic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChromatic.Location = new System.Drawing.Point(808, 32);
-            this.btnChromatic.Margin = new System.Windows.Forms.Padding(4);
-            this.btnChromatic.Name = "btnChromatic";
-            this.btnChromatic.Size = new System.Drawing.Size(171, 63);
-            this.btnChromatic.TabIndex = 5;
-            this.btnChromatic.Text = "Aberración Cromática";
-            this.btnChromatic.UseVisualStyleBackColor = false;
-            this.btnChromatic.Click += new System.EventHandler(this.btnChromatic_Click);
             // 
             // frmEditVideo
             // 
